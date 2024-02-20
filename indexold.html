@@ -26,97 +26,16 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet" />
+  <script src="script.js" defer></script>
 </head>
 
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
-      <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/religio/religio.svg" alt=""></a></h1>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li class="dropdown">
-            <a href="#"><span>Features</span> <i class="bi bi-chevron-down"></i></a>
-            <ul id="startul">
-              <div class="row">
-                <div class="col-md-6">
-                  <li><a href="dashboard.html"><b>Dashboard </b> <br>Monitor, analyze, optimize of your province</a>
-                  </li>
-                </div>
-                <div class="col-md-6">
-                  <li><a href="community.html"><b>Community </b> <br> Where you belong and thrive</a></li>
-                </div>
-                <div class="col-md-6">
-                  <li><a href="calendar.html"><b>Calendar </b> <br> Smart way to organize your schedule</a></li>
-                </div>
-                <div class="col-md-6">
-                  <li><a href="meeting.html"><b>Meeting </b> <br> Connect, Communicate, Collaborate</a></li>
-                </div>
-                <div class="col-md-6">
-                  <li><a href="members.html"><b>Members </b> <br> Manage your database Priest and their <br />
-                      informations</a></li>
-                </div>
-                <div class="col-md-6">
-                  <li><a href="document.html"><b>Document Management </b> <br> Store, organize, and access your files
-                      anytime,<br />anywhere.</a></li>
-                </div>
-                <div class="col-md-6">
-                  <li><a href="circular.html"><b>Circular </b> <br> Share your faith with circulars</a></li>
-                </div>
-                <div class="col-md-6">
-                  <li><a href="transfer.html"><b>Transfers </b> <br> Hassel free Transfers made Quickly</a></li>
-                </div>
-                <div class="col-md-6">
-                  <li><a href="directory.html"><b>Directory </b> <br> Simplify your search with one click</a></li>
-                </div>
-                <div class="col-md-6">
-                  <li><a href="contacts.html"><b>Contacts </b> <br> Keep your contacts up to date and organized.</a>
-                  </li>
-                </div>
-              </div>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#"><span>Products</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="index.html"><b>Religio </b> <br>Province Management Software</a></li>
-              <li><a href="https://cristoerp.com/" target="_blank"><b>CristO </b> <br> Parish Management Software</a>
-              </li>
-              <li><a href="/"><b>Cathedra</b> <br> Diocese Management Software</a></li>
-              <li><a href="/"><b>Charisma</b> <br> Christian Management Software</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#"><span>Resource</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="about.html"><b>About Us </b> <br>Our story and our values</a></li>
-              <li><a href="#whyreligio"><b>Why Religio ? </b> <br> Congregation Sans Paper</a></li>
-              <li><a href="mobileapp.html"><b>Mobile App</b> <br> Your pocket-sized solution</a></li>
-              <li><a href="security.html"><b>Security</b> <br> Keep Data with Encrypted Connections</a></li>
-              <li><a href="support.html"><b>Support</b> <br> Helpful responses in ~1 hour</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#"><span>Try it Out</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="contact.html"><b>Contact Us</b> <br>Reach out, we're here for you!</a></li>
-              <li><a href="about.html"><b>Book a Live Demo Call </b> <br> Schedule time with a Religio expert
-                  who<br />
-                  can tour Religio with you live</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html#contform" class="getstarted">Get Started</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-      <!-- .navbar -->
-    </div>
-  </header>
+  <header id="header"></header>
   <!-- End Header -->
-
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -307,7 +226,7 @@
     <section id="about" class="about">
       <div class="container">
         <div class="row content">
-          <div class="col-lg-12 text-center">
+          <div class="col-lg-12 text-center" id="whyreligio">
             <h2>Why Religio ?</h2>
             <p>
               This is a user-friendly software tool
@@ -336,6 +255,7 @@
               </p>
             </div>
           </div>
+          <!-- The following <div> will be visible on screens medium and larger (i.e., not on mobile devices) -->
           <div class="col-md-6 d-none d-md-flex align-items-center justify-content-md-center">
             <div class="CTA__secondary text-md-center">
               <a href="" class="button-primary button-primary--light" target="" data-bs-toggle="modal"
@@ -397,80 +317,7 @@
   <!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="credits">
-        <br>
-        <ul class="footer-module--links--c1916 footer-column">
-          <li style="font-size: 14px;" class="home-link"><a href="/" id="footlink">Home</a></li>
-          <li style="font-size: 14px;"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
-              id="footlink">Free Trial</a></li>
-          <li style="font-size: 14px;"><a href="about.html" id="footlink">About Us</a></li>
-          <li style="font-size: 14px;"><a href="mobileapp.html" id="footlink">Mobile App</a>
-          </li>
-          <li style="font-size: 14px;"><a href="security.html" id="footlink">Security</a></li>
-          <li style="font-size: 14px;"><a href="support.html" id="footlink">Support</a></li>
-          <li style="font-size: 14px;"><a href="contact.html" id="footlink">Contact Us</a></li>
-        </ul>
-        <br>
-        <ul>
-          <div class="credits">
-            <a href="http://facebook.com/boscosofttech" title="Facebook" target="_blank"><i class="bi-facebook"></i></a>
-            &nbsp;<a href="https://wa.me/9626800800" title="Whatsapp" target="_blank"><i class="bi-whatsapp"></i></a>
-            &nbsp;<a href="https://www.instagram.com/boscosoft/" title="Instagram" target="_blank"><i
-                class="bi-instagram"></i></a>
-            &nbsp;<a href="https://in.linkedin.com/company/boscosoft-technologies" title="Linkedin" target="_blank"><i
-                class="bi-linkedin"></i></a>
-            &nbsp;<a href="https://www.youtube.com/channel/UCBs91zb6NGNEyE5kPBd--Jg" title="YouTube" target="_blank"><i
-                class="bi-youtube"></i></a>
-            &nbsp;<a href="https://twitter.com/boscosoft?lang=en" title="Twitter" target="_blank"><i
-                class="bi-twitter"></i></a>
-          </div>
-        </ul>
-        <center>
-          <div class="copyright">
-            <ul class="footer-module--links--c1916 footer-column">
-              <li id="footcopy">&copy;
-                2024
-                <a href="https://www.boscosofttech.com" target="_blank" style="font-size: 14px;" class="it"><b>Boscosoft
-                    Technologies</b></a>
-              </li>
-            </ul>
-          </div>
-        </center>
-      </div>
-    </div>
-  </footer>
-  <!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <footer id="footer"></footer>
 </body>
 
 </html>

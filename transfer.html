@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Religio - Province Management Software</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="../wp-content/themes/twentyseventeen/assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+    <style>
+        /* FontAwesome for working BootSnippet :> */
+
+        @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+        #team {
+            background: #eee !important;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #108d6f;
+            border-color: #108d6f;
+            box-shadow: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #007b5e;
+            border-color: #007b5e;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section .section-title {
+            text-align: center;
+            color: #007b5e;
+            text-transform: uppercase;
+        }
+
+        #team .card {
+            border: none;
+            background: #ffffff;
+        }
+
+        .frontside {
+            position: relative;
+            -webkit-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            z-index: 2;
+            margin-bottom: 30px;
+        }
+
+        .backside {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: white;
+            -webkit-transform: rotateY(-180deg);
+            -moz-transform: rotateY(-180deg);
+            -o-transform: rotateY(-180deg);
+            -ms-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+            -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+            -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+            box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        }
+
+        .frontside,
+        .backside {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transition: 1s;
+            -webkit-transform-style: preserve-3d;
+            -moz-transition: 1s;
+            -moz-transform-style: preserve-3d;
+            -o-transition: 1s;
+            -o-transform-style: preserve-3d;
+            -ms-transition: 1s;
+            -ms-transform-style: preserve-3d;
+            transition: 1s;
+            transform-style: preserve-3d;
+        }
+
+        .frontside .card,
+        .backside .card {
+            min-height: 312px;
+        }
+
+        .backside .card a {
+            font-size: 18px;
+            color: #007b5e !important;
+        }
+
+        .frontside .card .card-title,
+        .backside .card .card-title {
+            color: #007b5e !important;
+        }
+
+        .frontside .card .card-body img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <br />
+
+    <section id="team" class="pb-5">
+        <div class="container">
+            <h5 class="section-title h1">Transfer</h5>
+            <center>
+                <p style="font-family:'Poppins';font-size: 2rem;margin-top:-30px;color:#002856;">Hassel free Transfer
+                    made
+                    Quickly</p>
+            </center>
+            <div class="row">
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="assets/img/sub/transfer/membertransfer.png"
+                                                alt="ReligiO"></p>
+                                        <h4 class="card-title">Member Transfer</h4>
+                                        <p class="card-text">This feature allows administrators or designated users to
+                                            create and manage a list of members who are eligible.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip">
+                        <div class="mainflip flip-0">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="assets/img/sub/transfer/generate.png"
+                                                alt="ReligiO"></p>
+                                        <h4 class="card-title">Generate Due List</h4>
+                                        <p class="card-text">The system can automatically generate a list of members who
+                                            are
+                                            due for transfer based on predefined criteria.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="assets/img/sub/transfer/request.png"
+                                                alt="ReligiO"></p>
+                                        <h4 class="card-title">Transfer Request</h4>
+                                        <p class="card-text">Members have the ability to submit transfer requests,
+                                            expressing their desire to move to a different location or position.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="assets/img/sub/transfer/update.png"
+                                                alt="ReligiO"></p>
+                                        <h4 class="card-title">Update Transfer List</h4>
+                                        <p class="card-text">When transfer decisions are made, administrators can update
+                                            the
+                                            transfer destinations or positions of members.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="assets/img/sub/transfer/gtl.png" alt="ReligiO">
+                                        </p>
+                                        <h4 class="card-title">Generate New Transfer List</h4>
+                                        <p class="card-text">After processing transfer requests and updating transfer
+                                            decisions, the system can generate a new transfer list.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="assets/img/sub/transfer/report.png"
+                                                alt="ReligiO"></p>
+                                        <h4 class="card-title">Report Details</h4>
+                                        <p class="card-text">The system can generate a comprehensive report in PDF
+                                            format
+                                            that provides transfer details for each member.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="clients section-bg">
+        <div class="container aos-init aos-animate" data-aos="zoom-in">
+            <div class="row">
+                <div class="col-md-6 d-flex align-items-center justify-content-md-center">
+                    <div class="section-title text-md-center">
+                        <p target="" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="titreligio">
+                            Discover a solution that fits your Province size and specific needs
+                            <br />
+                            <small class="d-md-none" style="font-size: 1.2rem; color: #ff6f61;"><b>Start 30 Day Free
+                                    Trial</b></small>
+                        </p>
+                    </div>
+                </div>
+                <!-- The following <div> will be visible on screens medium and larger (i.e., not on mobile devices) -->
+                <div class="col-md-6 d-none d-md-flex align-items-center justify-content-md-center">
+                    <div class="CTA__secondary text-md-center">
+                        <a href="" class="button-primary button-primary--light" target="" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalCenter" id="mylink">
+                            <h2 class="button-primary__link" title="Free 30 Day Trial">Free 30 Day Trial</h2>
+                            <span class="section-title">
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container center w-container text-center">
+            <div class="flex-stars">
+                <img src="https://assets-global.website-files.com/63e2e08df72ab98959f09628/63e331152a73c837c9977dd6_icon-star.svg"
+                    loading="lazy" alt="Religio Rating" class="img-60">
+                <img src="https://assets-global.website-files.com/63e2e08df72ab98959f09628/63e331152a73c837c9977dd6_icon-star.svg"
+                    loading="lazy" alt="Religio Rating" class="img-60">
+                <img src="https://assets-global.website-files.com/63e2e08df72ab98959f09628/63e331152a73c837c9977dd6_icon-star.svg"
+                    loading="lazy" alt="Religio Rating" class="img-60">
+                <img src="https://assets-global.website-files.com/63e2e08df72ab98959f09628/63e331152a73c837c9977dd6_icon-star.svg"
+                    loading="lazy" alt="Religio Rating" class="img-60">
+                <img src="https://assets-global.website-files.com/63e2e08df72ab98959f09628/63e331152a73c837c9977dd6_icon-star.svg"
+                    loading="lazy" alt="Religio Rating" class="img-60">
+            </div>
+            <h3 class="margin-btm-med"><b>Rated 4.9 stars – 560+ reviews on <span class="txt-blue">Capterra</b></span>
+            </h3>
+            <div id="w-node-_675c3d58-5f2a-1520-8f23-a35dad03b3db-c8061c97" class="inline-block">
+                <div class="flex-mc gap-med mobile-vertical">
+                    <a id="w-node-_675c3d58-5f2a-1520-8f23-a35dad03b3dd-c8061c97" style="margin: 20px;"
+                        href="https://www.capterra.com/reviews/157753/CristO?utm_source=vendor&utm_medium=badge&utm_campaign=capterra_reviews_badge"
+                        target="_blank" class="w-inline-block">
+                        <img src="https://assets-global.website-files.com/63e2e08df72ab98959f09628/64b97017941752758acdc948_ca-value-2023.png"
+                            loading="lazy" sizes="(max-width: 479px) 67vw, (max-width: 767px) 25vw, 160px"
+                            srcset="https://assets-global.website-files.com/63e2e08df72ab98959f09628/64b97017941752758acdc948_ca-value-2023-p-500.png 500w, https://assets-global.website-files.com/63e2e08df72ab98959f09628/64b97017941752758acdc948_ca-value-2023-p-800.png 800w, https://assets-global.website-files.com/63e2e08df72ab98959f09628/64b97017941752758acdc948_ca-value-2023.png 1336w"
+                            alt="Religio Capetra" class="img-160">
+                    </a>
+                    <a id="w-node-_675c3d58-5f2a-1520-8f23-a35dad03b3df-c8061c97"
+                        href="https://www.softwareadvice.com/church/cristo-profile" target="_blank"
+                        class="w-inline-block">
+                        <img src="https://assets-global.website-files.com/63e2e08df72ab98959f09628/64b9701700d6176cbbabffe8_sa-customer_support-2023.png"
+                            loading="lazy" sizes="(max-width: 479px) 67vw, (max-width: 767px) 25vw, 160px"
+                            srcset="https://assets-global.website-files.com/63e2e08df72ab98959f09628/64b9701700d6176cbbabffe8_sa-customer_support-2023-p-500.png 500w, https://assets-global.website-files.com/63e2e08df72ab98959f09628/64b9701700d6176cbbabffe8_sa-customer_support-2023-p-800.png 800w, https://assets-global.website-files.com/63e2e08df72ab98959f09628/64b9701700d6176cbbabffe8_sa-customer_support-2023.png 1180w"
+                            alt="Religio Software advice" class="img-160">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer"></footer>
+</body>
+
+</html>
