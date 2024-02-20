@@ -17,7 +17,8 @@
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet" />
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -28,6 +29,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -103,12 +105,13 @@
             <a href="#"><span>Try it Out</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="contact.html"><b>Contact Us</b> <br>Reach out, we're here for you!</a></li>
-              <li><a href="about.html"><b>Book a Live Demo Call </b> <br> Schedule time with a Religio expert
+              <li><a href="#" data-toggle="modal" data-target="#exampleModalCenter"><b>Book a Live Demo Call </b> <br>
+                  Schedule time with a Religio expert
                   who<br />
                   can tour Religio with you live</a></li>
             </ul>
           </li>
-          <li><a href="contact.html#contform" class="getstarted">Get Started</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="getstarted">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -116,6 +119,70 @@
     </div>
   </header>
   <!-- End Header -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"><b>Unlock Your Potential with a Free Trial</b></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <form method="post" id="myForm" class="php-email-form">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="mobile">Mobile:</label>
+                  <input type="tel" class="form-control" id="mobile" name="mobile" required>
+                </div>
+                <div class="form-group">
+                  <label for="captcha-input" class="form-label">ReCaptcha Verification:</label>
+                  <input type="text" class="form-control" name="captcha" id="captcha-input" required>
+                </div>
+                <div class="mb-3 d-flex align-items-center">
+                  <canvas id="captcha" width="200" height="80"></canvas>
+                  <button type="button" class="btn btn-secondary" id="refresh-captcha">
+                    <i class="fas fa-sync-alt"></i>
+                  </button>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Start Your Free Trial</button>
+                <br /><br />
+              </form>
+            </div>
+            <div class="col-md-6">
+              <div class="instructions">
+                <h5><b>Instructions:</b></h5>
+                <p>Follow the steps below to start your free trial:</p>
+                <li>Fill out the form on the left side.</li>
+                <li>Click on the "Start Your Free Trial" button.</li>
+                <li>Check your email for further instructions.</li>
+                <br />
+                <h5><b>Location:</b></h5>
+                <p>Bosco Soft Technologies Pvt. Ltd, No. 231/77, S.H.C Complex, TamilNadu , India , 635601</p>
+                <h5><b>Email:</b></h5>
+                <p><a href="mailto:info@boscosofttech.com">info@boscosofttech.com</a></p>
+                <h5><b>Mobile:</b></h5>
+                <p><a href="tel:9786000436">+91-9786000436</a></p>
+              </div>
+            </div>
+            <small>By clicking "Start Your Free Trial", you agree to our <a href="#">Terms</a> and acknowledge our <a
+                href="#">Privacy Policy</a>.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -304,7 +371,7 @@
     </section>
 
 
-    <section id="about" class="about">
+    <section id="whyreligio" class="about">
       <div class="container">
         <div class="row content">
           <div class="col-lg-12 text-center">
@@ -328,7 +395,7 @@
         <div class="row">
           <div class="col-md-6 d-flex align-items-center justify-content-md-center">
             <div class="section-title text-md-center">
-              <p target="" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="titreligio">
+              <p target="" data-toggle="modal" data-target="#exampleModalCenter" class="titreligio">
                 Discover a solution that fits your Province size and specific needs
                 <br />
                 <small class="d-md-none" style="font-size: 1.2rem; color: #ff6f61;"><b>Start 30 Day Free
@@ -338,8 +405,8 @@
           </div>
           <div class="col-md-6 d-none d-md-flex align-items-center justify-content-md-center">
             <div class="CTA__secondary text-md-center">
-              <a href="" class="button-primary button-primary--light" target="" data-bs-toggle="modal"
-                data-bs-target="#exampleModalCenter" id="mylink">
+              <a href="" class="button-primary button-primary--light" data-toggle="modal"
+                data-target="#exampleModalCenter" id="mylink">
                 <h2 class="button-primary__link" title="Free 30 Day Trial">Free 30 Day Trial</h2>
                 <span class="section-title">
                 </span>
@@ -453,7 +520,6 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <!-- End Footer -->
@@ -471,6 +537,169 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- jQuery Validation plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#myForm').validate({
+        errorClass: 'text-danger',
+        errorElement: 'span',
+        highlight: function (element, errorClass, validClass) {
+          $(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass) {
+          $(element).removeClass('is-invalid');
+        },
+        rules: {
+          name: {
+            required: true
+          },
+          email: {
+            required: true,
+            email: true
+          },
+          mobile: {
+            required: true,
+            number: true,
+            minlength: 10,
+            maxlength: 10
+          },
+          captcha: {
+            required: true
+          }
+        },
+        messages: {
+          name: {
+            required: "Please enter your name"
+          },
+          email: {
+            required: "Please enter your email",
+            email: "Please enter a valid email address"
+          },
+          mobile: {
+            required: "Please enter your mobile number",
+            number: "Please enter a valid mobile number",
+            minlength: "Mobile number must be at least 10 characters long",
+            maxlength: "Mobile number must not exceed 10 characters"
+          },
+          captcha: {
+            required: "Please Fill the ReCaptcha"
+          }
+        },
+        submitHandler: function (form) {
+          sendEmail();
+        }
+      });
+    });
+  </script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script>
+    (function () {
+      emailjs.init("IYqXyF76qLIEC10hr");
+    })();
+
+    function sendEmail() {
+      var templateParams = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        mobile: document.getElementById("mobile").value
+      };
+
+      emailjs.send("service_gioqfek", "template_mqeg3hs", templateParams)
+        .then(function (response) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Email sent successfully!',
+            showConfirmButton: true,
+            confirmButtonText: 'OK'
+          });
+        })
+        .catch(function (error) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Email sending failed: ' + error,
+            showConfirmButton: true,
+            confirmButtonText: 'OK'
+          });
+        });
+    }
+  </script>
+  <script>
+    $(document).ready(function () {
+      // Generate captcha on page load
+      generateCaptcha();
+      // Handle captcha refresh button click
+      $("#refresh-captcha").click(function () {
+        generateCaptcha();
+        $("#captcha-input").val("");
+      });
+      // Handle form submit
+      $("#captcha-form").submit(function (event) {
+        event.preventDefault();
+
+        // Validate captcha
+        var captchaInput = $("#captcha-input").val();
+        var captchaCode = sessionStorage.getItem("captchaCode");
+        if (captchaInput != captchaCode) {
+          alert("Invalid captcha code. Please try again.");
+          generateCaptcha();
+          $("#captcha-input").val("");
+          return;
+        }
+        // Form validation successful, submit form
+        alert("Form submitted successfully.");
+        $("#captcha-form").trigger("reset");
+        generateCaptcha();
+      });
+
+      // Define the function generateCaptcha()
+      function generateCaptcha() {
+        // Get the canvas element with ID captcha and create an instance of its canvas rendering context
+        var a = $("#captcha")[0],
+          b = a.getContext("2d");
+        // Clear the canvas
+        b.clearRect(0, 0, a.width, a.height);
+        // Define the string of characters that can be included in the captcha
+        var f = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+          e = "",
+          g = -45,
+          h = 45,
+          i = h - g,
+          j = 20,
+          k = 30,
+          l = k - j;
+        // Generate each character of the captcha
+        for (var m = 0; m < 6; m++) {
+          // Select random letter from the pool to be part of the captcha
+          var n = f.charAt(Math.floor(Math.random() * f.length));
+          e += n;
+
+          // Set up the text formatting
+          b.font = j + Math.random() * l + "px Arial";
+          b.textAlign = "center";
+          b.textBaseline = "middle";
+
+          // Set the color of the text
+          b.fillStyle = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
+
+          // Add the character to the canvas
+          var o = g + Math.random() * i;
+          b.translate(20 + m * 30, a.height / 2);
+          b.rotate(o * Math.PI / 180);
+          b.fillText(n, 0, 0);
+          b.rotate(-1 * o * Math.PI / 180);
+          b.translate(-(20 + m * 30), -1 * a.height / 2);
+        }
+        // Set the captcha code in session storage
+        sessionStorage.setItem("captchaCode", e);
+      }
+    })
+  </script>
 </body>
 
 </html>
