@@ -132,28 +132,31 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-md-6">
-              <form method="post" id="myForm" class="php-email-form">
-                <div class="form-group">
-                  <label for="name">Name:</label>
-                  <input type="text" class="form-control" id="name" name="name" required>
+              <form method="post" id="myForm" class="php-email-form" autocomplete="off">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label for="name">Name <span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="mobile">Mobile <span style="color: red;">*</span></label>
+                    <input type="tel" class="form-control" id="mobile" name="mobile" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label for="email">Email <span style="color: red;">*</span></label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="address">Address <span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" id="address" name="address" required>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                  <label for="mobile">Mobile:</label>
-                  <input type="tel" class="form-control" id="mobile" name="mobile" required>
-                </div>
-                <div class="form-group">
-                  <label for="captcha-input" class="form-label">ReCaptcha Verification:</label>
-                  <input type="text" class="form-control" name="captcha" id="captcha-input" required>
-                </div>
-                <div class="mb-3 d-flex align-items-center">
-                  <canvas id="captcha" width="200" height="80"></canvas>
-                  <button type="button" class="btn btn-secondary" id="refresh-captcha">
-                    <i class="fas fa-sync-alt"></i>
-                  </button>
+                  <label for="message">Message <span style="color: red;">*</span></label>
+                  <textarea class="form-control" name="message" id="message" rows="3" placeholder="Message"
+                    required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Start Your Free Trial</button>
                 <br /><br />
@@ -167,7 +170,7 @@
                 <li>Click on the "Start Your Free Trial" button.</li>
                 <li>Check your email for further instructions.</li>
                 <br />
-                <h5><b>Location:</b></h5>
+                <h5><b>Address:</b></h5>
                 <p>Bosco Soft Technologies Pvt. Ltd, No. 231/77, S.H.C Complex, TamilNadu , India , 635601</p>
                 <h5><b>Email:</b></h5>
                 <p><a href="mailto:info@boscosofttech.com">info@boscosofttech.com</a></p>
@@ -175,8 +178,8 @@
                 <p><a href="tel:9786000436">+91-9786000436</a></p>
               </div>
             </div>
-            <small>By clicking "Start Your Free Trial", you agree to our <a href="#">Terms</a> and acknowledge our <a
-                href="#">Privacy Policy</a>.</small>
+            <small class="text-center">By clicking "Start Your Free Trial", you agree to our <a href="#">Terms</a> and
+              acknowledge our <a href="#">Privacy Policy</a>.</small>
           </div>
         </div>
       </div>
@@ -572,26 +575,32 @@
             minlength: 10,
             maxlength: 10
           },
-          captcha: {
+          address: {
+            required: true
+          },
+          message: {
             required: true
           }
         },
         messages: {
           name: {
-            required: "Please enter your name"
+            required: "Enter your name"
           },
           email: {
-            required: "Please enter your email",
-            email: "Please enter a valid email address"
+            required: "Enter your email",
+            email: "Enter valid email"
           },
           mobile: {
-            required: "Please enter your mobile number",
-            number: "Please enter a valid mobile number",
-            minlength: "Mobile number must be at least 10 characters long",
+            required: "Enter mobile number",
+            number: "Enter a valid mobile number",
+            minlength: "Mobile number must be 10 digits",
             maxlength: "Mobile number must not exceed 10 characters"
           },
-          captcha: {
-            required: "Please Fill the ReCaptcha"
+          address: {
+            required: "Enter your address"
+          },
+          message: {
+            required: "Enter a message"
           }
         },
         submitHandler: function (form) {
@@ -611,7 +620,9 @@
       var templateParams = {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
-        mobile: document.getElementById("mobile").value
+        mobile: document.getElementById("mobile").value,
+        address: document.getElementById("address").value,
+        message: document.getElementById("message").value
       };
 
       emailjs.send("service_gioqfek", "template_mqeg3hs", templateParams)
@@ -622,6 +633,7 @@
             showConfirmButton: true,
             confirmButtonText: 'OK'
           });
+          document.getElementById("myForm").reset();
         })
         .catch(function (error) {
           Swal.fire({
@@ -633,77 +645,6 @@
           });
         });
     }
-  </script>
-  <script>
-    $(document).ready(function () {
-      // Generate captcha on page load
-      generateCaptcha();
-      // Handle captcha refresh button click
-      $("#refresh-captcha").click(function () {
-        generateCaptcha();
-        $("#captcha-input").val("");
-      });
-      // Handle form submit
-      $("#captcha-form").submit(function (event) {
-        event.preventDefault();
-
-        // Validate captcha
-        var captchaInput = $("#captcha-input").val();
-        var captchaCode = sessionStorage.getItem("captchaCode");
-        if (captchaInput != captchaCode) {
-          alert("Invalid captcha code. Please try again.");
-          generateCaptcha();
-          $("#captcha-input").val("");
-          return;
-        }
-        // Form validation successful, submit form
-        alert("Form submitted successfully.");
-        $("#captcha-form").trigger("reset");
-        generateCaptcha();
-      });
-
-      // Define the function generateCaptcha()
-      function generateCaptcha() {
-        // Get the canvas element with ID captcha and create an instance of its canvas rendering context
-        var a = $("#captcha")[0],
-          b = a.getContext("2d");
-        // Clear the canvas
-        b.clearRect(0, 0, a.width, a.height);
-        // Define the string of characters that can be included in the captcha
-        var f = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-          e = "",
-          g = -45,
-          h = 45,
-          i = h - g,
-          j = 20,
-          k = 30,
-          l = k - j;
-        // Generate each character of the captcha
-        for (var m = 0; m < 6; m++) {
-          // Select random letter from the pool to be part of the captcha
-          var n = f.charAt(Math.floor(Math.random() * f.length));
-          e += n;
-
-          // Set up the text formatting
-          b.font = j + Math.random() * l + "px Arial";
-          b.textAlign = "center";
-          b.textBaseline = "middle";
-
-          // Set the color of the text
-          b.fillStyle = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
-
-          // Add the character to the canvas
-          var o = g + Math.random() * i;
-          b.translate(20 + m * 30, a.height / 2);
-          b.rotate(o * Math.PI / 180);
-          b.fillText(n, 0, 0);
-          b.rotate(-1 * o * Math.PI / 180);
-          b.translate(-(20 + m * 30), -1 * a.height / 2);
-        }
-        // Set the captcha code in session storage
-        sessionStorage.setItem("captchaCode", e);
-      }
-    })
   </script>
 </body>
 
