@@ -60,7 +60,9 @@ h6 {
   background: #e1444d;
   color: #fff;
 }
-
+.button-primary__link:hover {
+  color: #002856 !important;
+}
 .back-to-top.active {
   visibility: visible;
   opacity: 1;
