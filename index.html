@@ -612,30 +612,132 @@
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script>
-    (function () {
-      emailjs.init("IYqXyF76qLIEC10hr");
-    })();
-
     function sendEmail() {
+      var apiKey = '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';
+      var url = 'https://api.sendinblue.com/v3/smtp/email';
       var templateParams = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        mobile: document.getElementById("mobile").value,
-        address: document.getElementById("address").value,
-        message: document.getElementById("message").value
+        sender: { name: document.getElementById("name").value, email: document.getElementById("email").value },
+        to: [{ email: 'sakthiganapathis97@gmail.com' }],
+        bcc: [
+          { email: 'muniraj@dbcyelagiri.edu.in' },
+          { email: 'sakthiganapathi@dbcyelagiri.edu.in' }
+        ],
+        subject: 'Contact Form',
+        textContent: document.getElementById("message").value,
+        htmlContent: `<!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Contact Form Email</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <style>
+              body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f8f9fa;
+                padding: 20px;
+              }
+              .email-container {
+                max-width: 600px;
+                margin: 0 auto;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+              }
+              .message-box {
+                padding: 20px;
+                border-left: 4px solid #007bff;
+                font-style: italic;
+                background-color: #f0f0f0;
+                margin-top: 20px;
+                border-radius: 5px;
+              }
+              .btn {
+                background-color: #007bff;
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 5px;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+              }
+              .btn:hover {
+                background-color: #0056b3;
+                color:#fff
+              }
+              h2 {
+                color: #007bff;
+                text-align: center;
+                margin-bottom: 20px;
+              }
+              p {
+                font-size: 16px;
+                line-height: 1.6;
+              }
+              b {
+                color: #007bff;
+              }
+              .footer-text {
+                text-align: center;
+                margin-top: 20px;
+                font-size: 14px;
+              }
+              .footer-text a {
+                color: #007bff;
+                text-decoration: none;
+              }
+              .footer-text a:hover {
+                text-decoration: underline;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="email-container">
+              <h2>New Message from ${document.getElementById("name").value}</h2>
+              <p>Hello <b>Admin,</b></p>
+              <div class="message-box">
+                    <p><strong>Name:</strong> ${document.getElementById("name").value}</p>
+                    <p><strong>Email:</strong> ${document.getElementById("email").value}</p>
+                    <p><strong>Mobile:</strong> <a href="tel:${document.getElementById("mobile").value}">${document.getElementById("mobile").value}</a></p>
+                    <p><strong>Address:</strong> ${document.getElementById("address").value}</p>
+                    <p><strong>Message:</strong> ${document.getElementById("message").value}</p>
+              </div>
+              <p>Best wishes,<br><b>CristO team</b></p>
+              <hr>
+              <p>If you want to visit our Website, click the button below:</p>
+              <a href="https://cristoerp.com/" target="_blank" class="btn">Visit Website</a>
+              <div class="footer-text">
+              <p>Thank you for reaching out! For more information, visit our website <a href="https://cristoerp.com/" target="_blank">here</a>.</p>
+              </div>
+            </div>
+          </body>
+          </html>
+          `,
       };
 
-      emailjs.send("service_gioqfek", "template_mqeg3hs", templateParams)
-        .then(function (response) {
-          Swal.fire({
-            icon: 'success',
-            title: 'Email sent successfully!',
-            showConfirmButton: true,
-            confirmButtonText: 'OK'
-          });
-          document.getElementById("myForm").reset();
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'api-key': apiKey
+        },
+        body: JSON.stringify(templateParams)
+      })
+        .then(response => {
+          if (response.ok) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Email sent successfully!',
+              showConfirmButton: true,
+              confirmButtonText: 'OK'
+            });
+            document.getElementById("myForm").reset();
+          } else {
+            throw new Error('Email sending failed');
+          }
         })
-        .catch(function (error) {
+        .catch(error => {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
